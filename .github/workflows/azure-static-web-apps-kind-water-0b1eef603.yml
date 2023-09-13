@@ -20,20 +20,26 @@ jobs:
         with:
           node-version: '18'
     
-      - name: Cache dependencies
+      - name: Cache dependecies
         id: cache
         uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
+        with: 
+          path: ~/node_modules
+          key: modules=${{ hashFiles('package-lock.json') }}
         
-      - name: Install dependecies
+      - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
 
       - uses: actions/checkout@v3
         with:
           submodules: true
+
+      - name: npm install, build
+        run: |
+          npm install
+          
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
