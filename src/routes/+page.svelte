@@ -1,14 +1,13 @@
 <script lang="js">
-    import LoginForm from "./components/LoginForm.svelte"
-    import SignupForm from "./components/SignupForm.svelte"
+    
     import FormContainer from "./components/FormContainer.svelte"
 </script>
 
 
 <main>
-    <LoginForm></LoginForm>
-    
-
+    <FormContainer>
+        
+    </FormContainer>
 </main>
 
 

@@ -8,9 +8,7 @@
       {label}
    </div>
 
-   <input type="radio" name="slide" id="login" checked>
-   <label for="login" class="slide login">{label}</label>
-
+   
    <form>
       <div class="field">
          <input type="text" placeholder="E-pasta adrese" required>
