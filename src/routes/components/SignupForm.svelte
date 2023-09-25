@@ -6,6 +6,9 @@
 
 
 <main>
+   <div class = "label">
+      {label}
+   </div>
     <form action="#" class="signup">
         <div class="field">
            <input type="text" placeholder="E-pasta adrese" required>

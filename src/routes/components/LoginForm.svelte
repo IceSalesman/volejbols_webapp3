@@ -3,7 +3,7 @@
 
 
 </script>
-<main>
+<main class="loginForm">
    <div class="login">
       {label}
    </div>
