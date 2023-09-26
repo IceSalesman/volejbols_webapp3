@@ -1,5 +1,10 @@
 <script>
-    let label = "Pieslēgties";
+
+   import FormContainer from "./FormContainer.svelte";
+
+   import { selectedForm } from "../../stores";
+
+   let label = "Pieslēgties";
 
 
 </script>
@@ -23,9 +28,7 @@
          <div class="btn-layer"></div>
          <input type="submit" value="Pieslēgties">
       </div>
-      <div class="signup-link">
-         <a href="https://www.nva.gov.lv/lv/bezdarbnieka-statusa-iegusana?utm_source=https%3A%2F%2Fwww.google.com%2F">Neesi reģistrējies? </a>
-      </div>
+      
    </form>
 </main>
 
