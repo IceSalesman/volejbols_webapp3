@@ -1,29 +1,39 @@
 <script lang="ts">
-	import { afterUpdate, beforeUpdate, tick } from 'svelte';
+	
 
     import LoginForm from "./LoginForm.svelte"
     import SignupForm from "./SignupForm.svelte"
-    import Slide from "./Slide.svelte"
-    import { selected } from "./Slide.svelte"
-
     
+
+    let selected = 'login';
+
     let visibleLogin: Boolean = true;
     let visibleSignup: Boolean = false;
     $: {
         console.log(selected)
-        if (selected === 'login') {
-            visibleSignup = false;
+        if (selected === 'login') {          
             visibleLogin = true;
+            visibleSignup = false;
+            
         } else if (selected === 'signup') {
             visibleLogin = false;
             visibleSignup = true;
         }
+    
+    }
+    function onChange(event: { currentTarget: { value: string; }; }){
+        selected = event.currentTarget.value;
     }
 
 </script>
 
 <main>
-    <Slide></Slide>
+    <label>
+        <input checked={selected === 'login'} on:change={onChange} type="radio" name="slide" value="login" /> Pieslēgties
+    </label>
+    <label>
+        <input checked={selected ==='signup'} on:change={onChange} type="radio" name="slide" value="signup" /> Reģistrēties
+    </label>
     {#if visibleLogin}
         <LoginForm></LoginForm>
     {/if}
