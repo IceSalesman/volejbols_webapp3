@@ -1,13 +1,16 @@
-<script lang="js">
+<script lang="ts">
     
     import FormContainer from "./components/FormContainer.svelte"
+    
 </script>
 
 
 <main>
-    <FormContainer>
+    <body>
+        <FormContainer>
         
-    </FormContainer>
+        </FormContainer>
+    </body>
 </main>
 
 
@@ -21,5 +24,12 @@
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
     }
-
+    body{
+        display: grid;
+        height: 100%;
+        width: 100%;
+        place-items: center;
+        background-image: image-set("./components/pictures/gatis.png");
+        background-size: cover;
+    }
 </style>
