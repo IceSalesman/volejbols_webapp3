@@ -108,12 +108,13 @@
         background: black;
         transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
     }
-
+ /*jus nevarat iedomaties ka es ienistu css
+ */
     input[type="radio"]{
         display: none;
     }
 
-    #signup:checked ~ .sliderTab{
+    #slideControls:checked ~ .sliderTab{
         left: 50%;
     }
 
