@@ -15,7 +15,7 @@
 
 
 
-<style lang="css">
+<style lang="postcss">
 
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
     main {
@@ -23,13 +23,20 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
-    }
-    body{
         display: grid;
         height: 100%;
         width: 100%;
-        place-items: center;
-        background-image: image-set("./components/pictures/gatis.png");
-        background-size: cover;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        
+        
+    }
+    body{
+        
+        
     }
 </style>

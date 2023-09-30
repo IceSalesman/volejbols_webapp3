@@ -1,8 +1,6 @@
 <script>
 
-   import FormContainer from "./FormContainer.svelte";
 
-   import { selectedForm } from "../../stores";
 
    let label = "Pieslēgties";
 
@@ -36,7 +34,7 @@
 
 
 
-<style>
+<style lang="postcss">
 
    
 
