@@ -7,7 +7,7 @@
 
 </script>
 <main class="loginForm">
-   <div class="login">
+   <div class="">
       {label}
    </div>
 
