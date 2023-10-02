@@ -6,7 +6,7 @@
 
 
 </script>
-<main class="loginForm">
+<main class="">
    <div class="">
       {label}
    </div>
@@ -22,7 +22,7 @@
       <div class="pass-link">
          <a href="#top">Aizsmirsi paroli?</a>
       </div>
-      <div class="field btn">
+      <div class="cursor-pointer">
          <div class="btn-layer"></div>
          <input type="submit" value="Pieslēgties">
       </div>

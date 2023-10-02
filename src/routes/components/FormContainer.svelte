@@ -2,8 +2,6 @@
 	import { get, writable } from "svelte/store";
     import { selectedForm } from "../../stores";
 
-	
-
     import LoginForm from "./LoginForm.svelte"
     import SignupForm from "./SignupForm.svelte"
     
@@ -27,9 +25,9 @@
 
 </script>
 
-<div class='formContainer'>
+<div class="">
     <div class="slideControls">
-        <label class="labelLogin">
+        <label class="">
             <input checked={get(selectedForm) === 'login'} on:change={onChange} id="login" type="radio" class="slide" name="slide" value="login" /> Pieslēgties
         </label>
         <label class="labelSignup">
