@@ -1,6 +1,6 @@
 <script>
-   import EmailInput from "./EmailInput.svelte";
-   import PasswordInput from "./PasswordInput.svelte";
+   import EmailInput from "$lib/components/EmailInput.svelte";
+   import PasswordInput from "$lib/components/PasswordInput.svelte";
 
 
     let signupLabel = "Reģistrēties"

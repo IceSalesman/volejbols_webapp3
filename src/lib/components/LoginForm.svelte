@@ -1,6 +1,6 @@
 <script>
-   import EmailInput from "./EmailInput.svelte";
-   import PasswordInput from "./PasswordInput.svelte";
+   import EmailInput from "$lib/components/EmailInput.svelte";
+   import PasswordInput from "$lib/components/PasswordInput.svelte";
 
 
    let label = "Pieslēgties";
@@ -26,18 +26,12 @@
       </div>
       <div class="cursor-pointer">
          <div class="btn-layer"></div>
-         <input type="submit" value="{label}">
+         <input class="bg-black/[0.5]" type="submit" value="{label}">
       </div>
       
    </form>
 </main>
 
-
-
-
-
 <style lang="postcss">
-
-   
 
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts">
     
     import { Container } from "postcss";
-    import FormContainer from "./components/FormContainer.svelte"
+    import FormContainer from "$lib/components/FormContainer.svelte"
     
     
 </script>
@@ -9,7 +9,7 @@
 <main>
     <body 
         class="w-full h-full"
-        style="background-image: image-set('src/routes/components/pictures/gatis.png'); background-size: cover">
+        style="background-image: image-set('src/static/gatis.png'); background-size: cover">
         
         <div class="flex h-screen items-center justify-center">
             <div class="flex container w-auto max-w-390 p-5 bg-white/[.5] ">

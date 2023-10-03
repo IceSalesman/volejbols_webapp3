@@ -2,8 +2,8 @@
 	import { get, writable } from "svelte/store";
     import { selectedForm } from "../../stores";
 
-    import LoginForm from "./LoginForm.svelte"
-    import SignupForm from "./SignupForm.svelte"
+    import LoginForm from "$lib/components/LoginForm.svelte"
+    import SignupForm from "$lib/components/SignupForm.svelte"
     
 
     let visibleLogin: Boolean = true;
