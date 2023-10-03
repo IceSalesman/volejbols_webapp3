@@ -1,5 +1,6 @@
 <script>
-
+   import EmailInput from "./EmailInput.svelte";
+   import PasswordInput from "./PasswordInput.svelte";
 
 
    let label = "Pieslēgties";
@@ -14,17 +15,18 @@
    
    <form>
       <div class="field">
-         <input type="text" placeholder="E-pasta adrese" required>
+         <EmailInput></EmailInput>
       </div>
-      <div class="field">
-         <input type="password" placeholder="Parole" required>
+      <div class="">
+         <PasswordInput></PasswordInput>
       </div>
+         
       <div class="pass-link">
          <a href="#top">Aizsmirsi paroli?</a>
       </div>
       <div class="cursor-pointer">
          <div class="btn-layer"></div>
-         <input type="submit" value="Pieslēgties">
+         <input type="submit" value="{label}">
       </div>
       
    </form>
