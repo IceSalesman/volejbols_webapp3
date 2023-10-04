@@ -1,7 +1,7 @@
 <script lang="ts">
     
     import { Container } from "postcss";
-    import FormContainer from "$lib/components/FormContainer.svelte"
+    import FormContainer from "$lib/components/LoginSignup/FormContainer.svelte"
     
     
 </script>

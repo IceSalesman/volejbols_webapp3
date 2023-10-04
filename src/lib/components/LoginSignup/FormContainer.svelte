@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { get, writable } from "svelte/store";
-    import { selectedForm } from "../../stores";
+    import { selectedForm } from "../../../stores";
 
-    import LoginForm from "$lib/components/LoginForm.svelte"
-    import SignupForm from "$lib/components/SignupForm.svelte"
+    import LoginForm from "$lib/components/LoginSignup/LoginForm.svelte"
+    import SignupForm from "$lib/components/LoginSignup/SignupForm.svelte"
     
 
     let visibleLogin: Boolean = true;
