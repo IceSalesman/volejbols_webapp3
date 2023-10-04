@@ -24,9 +24,10 @@
 <style lang="postcss">
 
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-    main {
+    
+    :global(html) {
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;   
+        font-family: 'Poppins', sans-serif;
     }
     
 
