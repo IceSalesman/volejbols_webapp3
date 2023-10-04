@@ -1,6 +1,6 @@
 <script>
-   import EmailInput from "$lib/components/EmailInput.svelte";
-   import PasswordInput from "$lib/components/PasswordInput.svelte";
+   import LoginInputs from "./inputs/LoginInputs.svelte";
+   import SubmitBtn from "./SubmitBtn.svelte";
 
 
    let label = "Pieslēgties";
@@ -8,28 +8,20 @@
 
 </script>
 <main class="">
-   <div class="">
-      {label}
-   </div>
 
-   
-   <form>
-      <div class="field">
-         <EmailInput></EmailInput>
-      </div>
-      <div class="">
-         <PasswordInput></PasswordInput>
-      </div>
+   <form class="flex-col">
+      <LoginInputs></LoginInputs>
+
+      <div class="space-y-1">
+         <a class="flex no-underline hover:underline text-[#4137ab] justify-center items-center p-1 " href="https://www.nva.gov.lv/lv/bezdarbnieka-statusa-iegusana">Aizmirsi paroli?</a>
          
-      <div class="pass-link">
-         <a href="#top">Aizsmirsi paroli?</a>
+         <div class="">
+            <SubmitBtn></SubmitBtn>
+         </div>
       </div>
-      <div class="cursor-pointer">
-         <div class="btn-layer"></div>
-         <input class="bg-black/[0.5]" type="submit" value="{label}">
-      </div>
-      
+
    </form>
+
 </main>
 
 <style lang="postcss">

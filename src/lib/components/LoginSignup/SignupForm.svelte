@@ -1,31 +1,27 @@
 <script>
-   import EmailInput from "$lib/components/EmailInput.svelte";
-   import PasswordInput from "$lib/components/PasswordInput.svelte";
+   import RegisterInputs from "./inputs/RegisterInputs.svelte";
+   import SubmitBtn from "./SubmitBtn.svelte";
+   
+   
 
-
-    let signupLabel = "Reģistrēties"
-
+   let signupLabel = "Reģistrēties";
+   
 
 </script>
 
 
 <main>
-   <div class = "label">
-      {signupLabel}
-   </div>
-    <form action="#" class="signup">
-         <div class="field">
-            <EmailInput></EmailInput>
-         </div>
+   
+   <form action="#" class="">
+      <div class="space-y-1">
+         <RegisterInputs></RegisterInputs>
          <div class="">
-            <PasswordInput></PasswordInput>
-         </div>
-         <div class="">
-            <PasswordInput></PasswordInput>
-         </div>
+            <SubmitBtn></SubmitBtn>
+         </div> 
+      </div>
         
-        
-     </form>
+
+   </form>
 </main>
 
 

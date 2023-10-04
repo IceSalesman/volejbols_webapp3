@@ -11,10 +11,9 @@
             }
         });
     }
+
 </script>
 
-
-<div class="field btn">
-    <div class="btn-layer"></div>
-    <input type="submit" value="{selectedLabel}">
- </div>
+        <button class="flex w-full justify-center items-center cursor-pointer bg-black/[0.5] rounded text-lg">
+            {selectedLabel}
+        </button>
