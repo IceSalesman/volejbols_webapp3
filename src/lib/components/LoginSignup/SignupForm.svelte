@@ -1,11 +1,7 @@
 <script>
    import RegisterInputs from "./inputs/RegisterInputs.svelte";
    import SubmitBtn from "./SubmitBtn.svelte";
-   
-   
-
-   let signupLabel = "Reģistrēties";
-   
+    
 
 </script>
 

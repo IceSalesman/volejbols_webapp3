@@ -8,6 +8,10 @@
 
     let visibleLogin: Boolean = true;
     let visibleSignup: Boolean = false;
+
+    let radioLoginLabel = 'Pieslēgties'
+    let radioSignupLabel = 'Reģistrēties'
+    
     $: {
         selectedForm.subscribe((value) => {
             if (value === 'login') {
@@ -28,14 +32,18 @@
 <div class="flex h-screen items-center justify-center">
     <div class="w-auto max-w-390 p-5 bg-white/[.5]  rounded-lg">
 
-        <div class="p-2">
-            <label class="">
-                <input checked={get(selectedForm) === 'login'} on:change={onChange} id="login" type="radio" class="slide" name="slide" value="login" /> Pieslēgties
-            </label>
-            <label class="labelSignup">
-                <input checked={get(selectedForm) === 'signup'} on:change={onChange} id="signup" type="radio" class="slide" name="slide" value="signup" /> Reģistrēties
-            </label>
-            
+        <div class="">
+            <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-1">
+                <div>
+                    <input checked={get(selectedForm) === 'login'} on:change={onChange} type="radio" name="option" id="loginRadio" value="login" class="peer hidden"  />
+                    <label for="loginRadio" class="block cursor-pointer select-none rounded-lg p-1 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">{radioLoginLabel}</label>
+                </div>
+        
+                <div>
+                    <input checked={get(selectedForm) === 'signup'} on:change={onChange} type="radio" name="option" id="signupRadio" value="signup" class="peer hidden" />
+                    <label for="signupRadio" class="block cursor-pointer select-none rounded-lg p-1 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">{radioSignupLabel}</label>
+                </div>
+            </div>
         
         </div>
             
