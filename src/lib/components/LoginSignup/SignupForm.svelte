@@ -8,7 +8,7 @@
 
 <main>
    
-   <form action="#" class="">
+   <form action="" class="flex-col p-1">
       <div class="space-y-1">
          <RegisterInputs></RegisterInputs>
          <div class="">

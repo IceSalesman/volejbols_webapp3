@@ -30,9 +30,9 @@
 </script>
 
 <div class="flex h-screen items-center justify-center">
-    <div class="w-auto max-w-390 p-5 bg-white/[.5]  rounded-lg">
+    <div class="w-390 max-w-390 p-5 bg-white/[.5]  rounded-lg">
 
-        <div class="">
+        <div class="p-2">
             <div class="grid w-full grid-cols-2 gap-2 rounded-xl bg-gray-200 p-1">
                 <div>
                     <input checked={get(selectedForm) === 'login'} on:change={onChange} type="radio" name="option" id="loginRadio" value="login" class="peer hidden"  />
