@@ -3,7 +3,7 @@
 	import { selectedForm } from '../../../stores';
 
 	import LoginForm from '$lib/components/LoginSignup/LoginForm.svelte';
-	import SignupForm from '$lib/components/LoginSignup/SignupForm.svelte';
+	import SignupForm from "$lib/components/LoginSignup/SignupForm.svelte";
 
 	let visibleLogin: Boolean = true;
 	let visibleSignup: Boolean = false;
@@ -28,7 +28,7 @@
 </script>
 
 <div class="flex h-screen items-center justify-center">
-	<div class="w-[390px] h-[490px] bg-white rounded-xl overflow-hidden">
+	<div class="w-[390px] h-[490px] bg-white rounded-xl flex flex-col overflow-hidden">
 		<div class="grid w-full grid-cols-2 justify-stretch items-center">
 			<div class="bg-gray-100">
 				<input
@@ -38,7 +38,7 @@
 					value="login"
 					name="option"
 					checked={get(selectedForm) === 'login'}
-                    on:change={onChange}
+					on:change={onChange}
 				/>
 				<label
 					for="loginRadio"
@@ -54,7 +54,7 @@
 					value="signup"
 					name="option"
 					checked={get(selectedForm) === 'signup'}
-                    on:change={onChange}
+					on:change={onChange}
 				/>
 				<label
 					for="signupRadio"
@@ -65,14 +65,9 @@
 		</div>
 
 		{#if visibleLogin}
-            <div class="">
-                <LoginForm></LoginForm>
-            </div>
-        {/if}
-        {#if visibleSignup}
-            <div class="">
-                <SignupForm></SignupForm>
-            </div>
-        {/if}
+			<LoginForm />
+		{:else if visibleSignup}
+			<SignupForm />
+		{/if}
 	</div>
 </div>
