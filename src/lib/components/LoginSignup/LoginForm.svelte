@@ -1,6 +1,14 @@
 <script lang="ts">
+   import { goto } from "$app/navigation"
+   import CheckInPage from "../CheckInSystem/CheckInPage.svelte";
+
+
+
 	let inputEmail = 'E-pasta adrese';
 	let inputPass = 'Parole';
+   
+
+   
 </script>
 
 <form method="post" action="" class="h-full">
@@ -30,7 +38,7 @@
          >
       </div>
       <div class="flex flex-col items-center">
-         <button type="submit" class="p-1 px-4 items-center cursor-pointer bg-gray-100 rounded text-lg font-bold text-sky-500 hover:bg-gray-200">Pieslēgties</button>
+         <button id="submit" type="submit" class="p-1 px-4 items-center cursor-pointer bg-gray-100 rounded text-lg font-bold text-sky-500 hover:bg-gray-200">Pieslēgties</button>
       </div>
    </div>
 </form>
