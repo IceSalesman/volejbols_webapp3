@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.formInput {
-    
+@layer components {
+    .formInputDiv {
+        @apply border-2 hover:border-sky-500 focus-within:border-sky-500 p-1 rounded
+    }
 }
