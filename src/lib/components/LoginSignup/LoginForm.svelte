@@ -11,29 +11,31 @@
 
 <form method="post" action="" class="h-full">
 	<div class="h-full flex flex-col justify-evenly items-center">
-		<div class="border p-1 rounded ">
+		<div class="w-[330px] border mx-10 p-1 rounded hover:border-sky-500 focus-within:border-sky-500">
 			<input
 				type="email"
 				name="email"
+				class = "outline-none"
 				placeholder={inputEmail}
 				required
 			/>
 		</div>
-		<div class="flex border p-1 rounded">
+		<div class="w-max-[330px] flex border p-1 rounded group hover:border-sky-500 focus-within:border-sky-500">
 			<input
 				type={show ? 'text' : 'password'}
 				name="password"
 				placeholder={inputPass}
+				class="outline-none"
 				required
 			/>
 			<!-- Es hz kā pareizi ievadīt svg failu, img neštirī -->
 			<button id="eye" on:click|preventDefault={() => show = !show}>
 				{#if show}
-					
 					<ShowEye />
 				{:else}
 					<HideEye />
 				{/if}
+			</button>
 		</div>
 		<div>
 			<a
