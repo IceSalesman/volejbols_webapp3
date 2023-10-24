@@ -1,12 +1,10 @@
 <script lang="ts">
-	import HideEye from "../SVGicons/HideEye.svelte";
-	import ShowEye from "../SVGicons/ShowEye.svelte";
-
+	import ShowHidePasswordButton from "./ShowHidePasswordButton.svelte";
 
 	let inputEmail = 'E-pasta adrese';
 	let inputPass = 'Parole';
+	let showPassword: boolean
 
-	let show = false;
 </script>
 
 <form method="post" action="" class="h-full">
@@ -23,20 +21,13 @@
 			</div>
 			<div class="formInputDiv flex flex-row">
 				<input
-					type={show ? 'text' : 'password'}
+					type={showPassword ? 'text' : 'password'}
 					name="password"
 					placeholder={inputPass}
 					class="outline-none w-11/12"
 					required
 				/>
-				<!-- Es hz kā pareizi ievadīt svg failu, img neštirī -->
-				<button id="eye" on:click|preventDefault={() => show = !show}>
-					{#if show}
-						<ShowEye />
-					{:else}
-						<HideEye />
-					{/if}
-				</button>
+				<ShowHidePasswordButton bind:showPassword/>
 			</div>
 			<div>
 				<a
