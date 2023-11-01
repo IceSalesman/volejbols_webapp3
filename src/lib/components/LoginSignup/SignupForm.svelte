@@ -16,6 +16,7 @@
 					name="email"
 					class="outline-none w-full"
 					placeholder={inputEmail}
+					
 				/>
 			</div>
 			<div class="flex flex-col items-center">
