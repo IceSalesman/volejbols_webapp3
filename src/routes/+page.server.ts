@@ -1,17 +1,19 @@
 import transporter from "$lib/utils/email"
-import {redirect} from "@sveltejs/kit"
+import { EMAIL } from "$env/static/private"
 
 export const actions = {
     default: async({request}) => {
         try {
             const formData = await request.formData();
-            const email = formData.get("email");
-            console.log(email);
-            let html = `<h2><strong>Hi!</h2><pre>${email}</pre>`;
+            const toEmail = formData.get("email");
+            let html = `<h2><strong>Hi!</h2><pre>${toEmail}</pre>`;
 
             const message = {
-                from: "info@volejbols.id.lv",
-                to: "zuga.eduards@gmail.com",
+                from: {
+                    name: "Verifikācijas kods",
+                    address: EMAIL
+                },
+                to: toEmail,
                 subject: "test",
                 text: "test",
                 html: html,
@@ -31,7 +33,6 @@ export const actions = {
             };
 
             await sendEmail(message);
-            console.log("yeey")
             return {
                 success: "Email is sent",
             };

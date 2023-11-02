@@ -12,7 +12,7 @@
 			</p>
 			<div class="formInputDiv">
 				<input
-					type="text"
+					type="email"
 					name="email"
 					class="outline-none w-full"
 					placeholder={inputEmail}
