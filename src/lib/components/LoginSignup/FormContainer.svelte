@@ -3,7 +3,7 @@
 	import { selectedForm } from '../../../stores';
 
 	import LoginForm from '$lib/components/LoginSignup/LoginForm.svelte';
-	import SignupForm from "$lib/components/LoginSignup/SignupForm.svelte";
+	import SignupForm from '$lib/components/LoginSignup/SignupForm.svelte';
 	
 
 	let visibleLogin: Boolean = true;
@@ -29,7 +29,7 @@
 </script>
 
 <div class="flex h-screen items-center justify-center">
-	<div class="w-[390px] h-[490px] bg-white rounded-xl flex flex-col overflow-hidden">
+	<div class="w-[350px] h-[450px] bg-white rounded-xl flex flex-col overflow-hidden">
 		<div class="grid w-full grid-cols-2 justify-stretch items-center">
 			<div class="bg-gray-100">
 				<input
