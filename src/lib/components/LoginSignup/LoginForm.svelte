@@ -38,7 +38,7 @@
 			<div class="flex flex-col items-center">
 				<button
 					type="submit"
-					class="p-1 px-4 items-center cursor-pointer bg-gray-100 rounded text-lg font-bold text-sky-500 hover:bg-gray-200"
+					class="loginPageSubmitButton"
 					>Pieslēgties</button
 				>
 			</div>
