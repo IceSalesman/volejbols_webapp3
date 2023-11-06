@@ -16,7 +16,7 @@ export async function sendVerificationCode(toEmail: string, verificationCode: st
   await transporter.sendMail({
       from: {
         name: "Verifikācijas kods",
-        address: "info@volejbols.id.lv"
+        address: EMAIL
       },
       to: toEmail,
       subject: "Tavs verifikācijas kods",
