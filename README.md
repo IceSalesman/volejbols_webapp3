@@ -1,2 +1,1 @@
-mājaslapas ceptuve
-mājaslapas ceptuve
+# es gribu lapsinas ar astitem
