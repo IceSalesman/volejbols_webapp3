@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-    import { writable } from 'svelte/store';
-	
+    
 
     
 
@@ -74,7 +73,7 @@
 </script>
 
 
-<form action="">
+<form action="" method="post">
     <div>
         <div class="">
             <div class="flex items-center justify-center p-2">

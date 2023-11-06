@@ -2,8 +2,11 @@ import {redirect} from "@sveltejs/kit"
 
 import type { Actions } from '@sveltejs/kit';
 
-export const actions: Actions = {
-    manageFile: async ({ request }) => {
-        console.log(await request.formData());
-    }
-}
+import {error} from '@sveltejs/kit'
+
+  export const actions: Actions = {
+    contact: async ({ request }) => {
+        console.log(request.formData);
+    },
+    
+} satisfies Actions;
