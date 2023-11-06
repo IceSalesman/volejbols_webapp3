@@ -1,12 +1,16 @@
-import {redirect} from "@sveltejs/kit"
+import { sendVerificationCode } from "$lib/emails/email"
+import { otpSent } from "../stores";
 
-import type { Actions } from '@sveltejs/kit';
 
-import {error} from '@sveltejs/kit'
+export const actions = {
+    sendVerificationCode: async ({ request }) => {
+        const formData = await request.formData();
+        const toEmail = String(formData.get("email"));
+        const testValue = "Test123"
 
-  export const actions: Actions = {
-    contact: async ({ request }) => {
-        console.log(request.formData);
-    },
-    
-} satisfies Actions;
+        await sendVerificationCode(toEmail, testValue);
+
+        otpSent.set(true);
+        console.log("optSent:" + otpSent)
+    }
+}

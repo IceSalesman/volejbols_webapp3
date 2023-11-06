@@ -33,6 +33,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-simple-modal": "^1.6.1"
+		"@types/nodemailer": "^6.4.13",
+		"nodemailer": "^6.9.7",
+		"svelte-email": "^0.0.4"
 	}
 }

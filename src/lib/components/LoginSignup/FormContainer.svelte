@@ -1,28 +1,14 @@
 <script lang="ts">
-	import { get, writable } from 'svelte/store';
-	import { selectedForm } from '../../../stores';
+	import { get } from 'svelte/store';
+	import { otpSent, selectedForm } from '../../../stores';
 
 	import LoginForm from '$lib/components/LoginSignup/LoginForm.svelte';
-	import SignupForm from '$lib/components/LoginSignup/SignupForm.svelte';
-	
-
-	let visibleLogin: Boolean = true;
-	let visibleSignup: Boolean = false;
+	import EmailVerificationInput from '$lib/components/LoginSignup/EmailVerificationInput.svelte';
+	import OTPpasswordInput from './OTPpasswordInput.svelte';
 
 	let radioLoginLabel = 'Pieslēgties';
 	let radioSignupLabel = 'Reģistrēties';
 
-	$: {
-		selectedForm.subscribe((value) => {
-			if (value === 'login') {
-				visibleLogin = true;
-				visibleSignup = false;
-			} else if (value === 'signup') {
-				visibleLogin = false;
-				visibleSignup = true;
-			}
-		});
-	}
 	function onChange(event: { currentTarget: { value: string } }) {
 		selectedForm.set(event.currentTarget.value);
 	}
@@ -33,6 +19,7 @@
 		<div class="grid w-full grid-cols-2 justify-stretch items-center">
 			<div class="bg-gray-100">
 				<input
+					disabled={$otpSent}
 					type="radio"
 					id="loginRadio"
 					class="hidden peer"
@@ -43,7 +30,7 @@
 				/>
 				<label
 					for="loginRadio"
-					class="p-2 cursor-pointer block text-center select-none peer-checked:text-sky-500 peer-checked:font-bold peer-checked:bg-white peer-hover:bg-gray-200"
+					class={`${$otpSent? "loginDisabled" : "loginSignupSelectionRadio"}`}
 					>{radioLoginLabel}
 				</label>
 			</div>
@@ -59,16 +46,20 @@
 				/>
 				<label
 					for="signupRadio"
-					class="p-2 cursor-pointer block text-center select-none peer-checked:text-sky-500 peer-checked:font-bold peer-checked:bg-white peer-hover:bg-gray-200"
+					class={`${$otpSent? "signupAfterOTPsent" : "loginSignupSelectionRadio"}`}
 					>{radioSignupLabel}
 				</label>
 			</div>
 		</div>
 
-		{#if visibleLogin}
+		{#if $selectedForm === "login"}
 			<LoginForm />
-		{:else if visibleSignup}
-			<SignupForm />
+		{:else if $selectedForm === "signup"}
+			{#if !$otpSent}
+				<EmailVerificationInput />
+			{:else if $otpSent}
+				<OTPpasswordInput />
+			{/if}
 		{/if}
 	</div>
 </div>
