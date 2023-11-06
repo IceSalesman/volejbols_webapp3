@@ -7,7 +7,7 @@
 
 </script>
 
-<form method="post" action="/CheckIn/+page.svelte" class="h-full">
+<form method="post" action="/CheckIn" class="h-full">
 	<div class="w-full h-full flex justify-center">
 		<div class="w-4/5 h-full flex flex-col justify-evenly">
 			<div class="formInputDiv">

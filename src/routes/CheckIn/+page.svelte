@@ -73,7 +73,7 @@
 </script>
 
 
-<form action="" method="post">
+<form action="">
     <div>
         <div class="">
             <div class="flex items-center justify-center p-2">
