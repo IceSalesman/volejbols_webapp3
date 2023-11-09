@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .formInputDiv {
+        @apply border-2 hover:border-sky-500 focus-within:border-sky-500 p-1 rounded
+    }
+
+    .loginPageSubmitButton {
+        @apply p-1 px-4 items-center cursor-pointer bg-gray-100 rounded text-lg font-bold text-sky-500 hover:bg-gray-200
+    }
+
+    .loginSignupSelectionRadio {
+        @apply p-2 cursor-pointer block text-center select-none peer-checked:text-sky-500 peer-checked:font-bold peer-checked:bg-white peer-hover:bg-gray-200
+    }
+
+    .loginDisabled {
+        @apply p-2 block text-center text-gray-600 bg-gray-50 select-none 
+    }
+
+    .signupAfterOTPsent {
+        @apply p-2 block text-center select-none peer-checked:text-sky-500 peer-checked:font-bold peer-checked:bg-white
+    }
+}

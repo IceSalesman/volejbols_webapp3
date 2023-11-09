@@ -31,5 +31,10 @@
 		"typescript": "^5.0.0",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@types/nodemailer": "^6.4.13",
+		"nodemailer": "^6.9.7",
+		"svelte-email": "^0.0.4"
+	}
 }

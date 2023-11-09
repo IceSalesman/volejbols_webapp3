@@ -1,29 +1,35 @@
 <script lang="ts">
-	let inputEmail = 'E-pasta adrese';
 
+	let inputOTP = 'Ievadiet verifikācijas kodu';
+
+	const handleSubmit = () => {
+
+    }
+	
 </script>
 
-<form method="post" action="/register" class="h-full">
+
+
+<form method="post" on:submit|preventDefault={handleSubmit} class="h-full">
 	<div class="h-full flex flex-col justify-evenly items-center">
 		<div class="w-4/5 h-full flex flex-col justify-evenly">
 			<p class="text-center">
-				<strong>Sveiks volejbola entuziast!</strong> <br /> 
-				Ievadi savu e-pastu, lai uzsāktu reģistrāciju!
+				<strong>Uz tavu e-pastu tika nosūtīts verifikācijas kods!</strong> <br /> <br /> 
+				Ievadi to, lai turpinātu reģistrāciju!
 			</p>
 			<div class="formInputDiv">
 				<input
-					type="text"
+					type="email"
 					name="email"
 					class="outline-none w-full"
-					placeholder={inputEmail}
-					
+					placeholder={inputOTP}
 				/>
 			</div>
 			<div class="flex flex-col items-center">
 				<button
 					type="submit"
-					class="p-1 px-4 items-center cursor-pointer bg-gray-100 rounded text-lg font-bold text-sky-500 hover:bg-gray-200"
-					>Reģistrēties
+					class="loginPageSubmitButton"
+					>Turpināt
 				</button>
 			</div>
 		</div>
