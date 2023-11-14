@@ -5,7 +5,7 @@ module.exports = {
     container: {},
     extend: {
       backgroundImage: {
-        'gatis': "url('./src/static/gatis.png')"
+        'arts': "url('./src/static/arts.png')"
       }
     },
   },
