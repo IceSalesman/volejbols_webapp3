@@ -1,58 +1,47 @@
 <script lang="ts">
-	import { enhance } from "$app/forms";
-	import { otpSent } from "../../../stores";
-  
+	import { otpSent } from '../../../stores';
+
 	let inputEmail = 'E-pasta adrese';
-	let showVerificationCodeInput = false;
-  
+
 	function submitForm(event: Event) {
-	  event.preventDefault(); // Prevent the default form submission
-  
-	  // Get the form data
-	  const formData = new FormData(event.target as HTMLFormElement);
-  
-	  // Perform the first action: send verification code
-	  fetch((event.target as HTMLFormElement).action, {
-		method: 'POST',
-		body: formData,
-	  })
-	  .then(response => response.json())
-	  .then(data => {
-		// Handle the response if needed
-		console.log('Verification code sent:', data);
-  
-		// Update the store or component state to indicate that the OTP has been sent
-		otpSent.set(true);
-  
-		// Show the verification code input component
-		showVerificationCodeInput = true;
-	  })
-	  .catch(error => {
-		console.error('Error sending verification code:', error);
-		// Handle errors if needed
-	  });
+		event.preventDefault(); // Prevent the default form submission
+
+		// Get the form data
+		const formData = new FormData(event.target as HTMLFormElement);
+
+		// Perform the first action: send verification code
+		fetch((event.target as HTMLFormElement).action, {
+			method: 'POST',
+			body: formData
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				// Handle the response if needed
+				console.log('Verification code sent:', data);
+				otpSent.set(true);
+				// Update the store or component state to indicate that the OTP has been sent
+
+			})
+			.catch((error) => {
+				console.error('Error sending verification code:', error);
+				// Handle errors if needed
+			});
 	}
-  </script>
-  
-  {#if !showVerificationCodeInput}
-	<!-- Nepārmainās logs uz verifikācijas apstiprināšanas logu -->
-	<form method="post" on:submit={submitForm} action="?/sendVerificationCode" class="h-full">
-	  <div class="h-full flex flex-col justify-evenly items-center">
+</script>
+
+<form method="post" on:submit={submitForm} action="?/sendVerificationCode" class="h-full">
+	<div class="h-full flex flex-col justify-evenly items-center">
 		<div class="w-4/5 h-full flex flex-col justify-evenly">
-		  <p class="text-center">
-			<strong>Sveiks volejbola entuziast!</strong> <br />
-			Ievadi savu e-pastu, lai uzsāktu reģistrāciju!
-		  </p>
-		  <div class="formInputDiv">
-			<input type="email" name="email" class="outline-none w-full" placeholder={inputEmail} />
-		  </div>
-		  <div class="flex flex-col items-center">
-			<button type="submit" class="loginPageSubmitButton">Reģistrēties </button>
-		  </div>
+			<p class="text-center">
+				<strong>Sveiks volejbola entuziast!</strong> <br />
+				Ievadi savu e-pastu, lai uzsāktu reģistrāciju!
+			</p>
+			<div class="formInputDiv">
+				<input type="email" name="email" class="outline-none w-full" placeholder={inputEmail} />
+			</div>
+			<div class="flex flex-col items-center">
+				<button type="submit" class="loginPageSubmitButton">Reģistrēties </button>
+			</div>
 		</div>
-	  </div>
-	</form>
-  {:else}
-	<!--j-->
-	<p>Verification code input component goes here.</p>
-  {/if}
+	</div>
+</form>
