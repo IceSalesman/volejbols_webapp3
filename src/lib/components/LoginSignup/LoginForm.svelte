@@ -7,7 +7,7 @@
 
 </script>
 
-<form method="post" action="/CheckIn/+page.svelte" class="h-full">
+<form method="post" action="/CheckIn" class="h-full">
 	<div class="w-full h-full flex justify-center">
 		<div class="w-4/5 h-full flex flex-col justify-evenly">
 			<div class="formInputDiv">
@@ -35,10 +35,10 @@
 					href="https://www.nva.gov.lv/lv/bezdarbnieka-statusa-iegusana">Aizmirsi paroli?</a
 				>
 			</div>
-			<div class="flex flex-col items-center">
+			<div class="flex flex-col items-center bg-arts">
 				<button
 					type="submit"
-					class="p-1 px-4 items-center cursor-pointer bg-gray-100 rounded text-lg font-bold text-sky-500 hover:bg-gray-200"
+					class="loginPageSubmitButton"
 					>Pieslēgties</button
 				>
 			</div>

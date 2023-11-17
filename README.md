@@ -1,3 +1,1 @@
-mājaslapas ceptuve
-
-es biju šeit
+mes baigi cepjam😎

@@ -11,6 +11,5 @@ export const actions = {
         await sendVerificationCode(toEmail, testValue);
 
         otpSent.set(true);
-        console.log("optSent:" + otpSent)
     }
 }

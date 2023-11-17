@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
     
-
-    
-
     let time = new Date()
 
     let goThere = "Būšu😎";
@@ -50,9 +47,9 @@
         if (daysTillSaturday<0){
             daysTillSaturday = 6;
         }
+    }
 
     
-    }
 
 
    
@@ -73,7 +70,7 @@
 </script>
 
 
-<form action="" method="post">
+<form action="">
     <div>
         <div class="">
             <div class="flex items-center justify-center p-2">
