@@ -1,4 +1,4 @@
-import { EMAIL, EMAIL_PASSWORD} from "$env/static/private";
+import { process.env.EMAIL, process.env.EMAIL_PASSWORD} from "$env/static/private";
 import { createTransport } from "nodemailer";
 import { render } from "svelte-email";
 import VerificationCodeEmail from "$lib/emails/VerificationCodeEmail.svelte";
