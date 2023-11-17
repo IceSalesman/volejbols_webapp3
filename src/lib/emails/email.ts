@@ -2,8 +2,8 @@ import { createTransport } from "nodemailer";
 import { render } from "svelte-email";
 import VerificationCodeEmail from "$lib/emails/VerificationCodeEmail.svelte";
 
-const EMAIL: string = process.env.EMAIL;
-const EMAIL_PASSWORD: string = process.env.EMAIL_PASSWORD;
+const EMAIL: string = process.env.EMAIL!;
+const EMAIL_PASSWORD: string = process.env.EMAIL_PASSWORD!;
 
 export const transporter = createTransport({
     host: "smtppro.zoho.eu",
