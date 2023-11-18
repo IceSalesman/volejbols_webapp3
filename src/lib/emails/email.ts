@@ -15,6 +15,7 @@ export const transporter = createTransport({
 })
 
 export async function sendVerificationCode(toEmail: string, verificationCode: string) {
+  console.log(EMAIL);
   await transporter.sendMail({
       from: {
         name: "Verifikācijas kods",
