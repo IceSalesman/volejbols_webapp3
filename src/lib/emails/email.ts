@@ -2,8 +2,8 @@ import { createTransport } from "nodemailer";
 import { render } from "svelte-email";
 import VerificationCodeEmail from "$lib/emails/VerificationCodeEmail.svelte";
 
-const EMAIL = process.env.EMAIL;
-const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+const EMAIL: string = process.env.EMAIL!;
+const EMAIL_PASSWORD: string = process.env.EMAIL_PASSWORD!;
 
 export const transporter = createTransport({
     host: "smtppro.zoho.eu",
@@ -15,6 +15,7 @@ export const transporter = createTransport({
 })
 
 export async function sendVerificationCode(toEmail: string, verificationCode: string) {
+  console.log(EMAIL);
   await transporter.sendMail({
       from: {
         name: "Verifikācijas kods",
