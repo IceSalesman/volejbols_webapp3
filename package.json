@@ -37,6 +37,9 @@
 		"@azure/keyvault-secrets": "^4.7.0",
 		"@types/node": "^20.9.0",
 		"@types/nodemailer": "^6.4.13",
+		"azure-identity": "^0.0.1-security",
+		"identity": "^4.11.4",
+		"keyvault-secrets": "^0.0.1-security",
 		"nodemailer": "^6.9.7",
 		"svelte-email": "^0.0.4"
 	}
