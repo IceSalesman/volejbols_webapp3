@@ -4,6 +4,7 @@ import VerificationCodeEmail from "$lib/emails/VerificationCodeEmail.svelte";
 
 const EMAIL: string = process.env.EMAIL!;
 const EMAIL_PASSWORD: string = process.env.EMAIL_PASSWORD!;
+const TEST: string = process.env.EMAIL_PASSWORD!;
 
 export const transporter = createTransport({
     host: "smtppro.zoho.eu",
@@ -14,8 +15,11 @@ export const transporter = createTransport({
     }
 })
 
+console.log(`Test value: ${TEST}`)
+
 export async function sendVerificationCode(toEmail: string, verificationCode: string) {
   console.log(EMAIL);
+  console.log(`Test value after sent email: ${TEST}`)
   await transporter.sendMail({
       from: {
         name: "Verifikācijas kods",

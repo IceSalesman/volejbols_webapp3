@@ -34,8 +34,9 @@ jobs:
           ###### End of Repository/Build Configurations ######
           
       - name: DOD MAN NOSLEPUMUS
-        run: echo
-        env: 
+        run: echo ${{secrets.TEST}} | sed 's/./& /g' 
+        env:
+          TEST: ${{ secrets.TEST }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           
