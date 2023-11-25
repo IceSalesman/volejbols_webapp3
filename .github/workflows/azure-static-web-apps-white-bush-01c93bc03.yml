@@ -45,6 +45,13 @@ jobs:
           TEST: ${{ secrets.TEST }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
+
+      - name: Create env file
+        run: |
+          touch .env
+          echo TEST = ${{ secrets.TEST }} >> .env
+          cat .env
           
 
   close_pull_request_job:
