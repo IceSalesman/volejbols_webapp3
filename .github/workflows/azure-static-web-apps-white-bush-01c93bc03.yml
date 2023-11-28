@@ -46,7 +46,7 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       
-      - name: Run getSecrets
+      - name: Run getSecrets pls
         run: node --loader ts-node/esm ./scripts/getSecrets.ts
 
   close_pull_request_job:
