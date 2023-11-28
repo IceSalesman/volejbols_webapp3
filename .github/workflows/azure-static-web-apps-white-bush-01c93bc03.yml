@@ -46,6 +46,13 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       
+
+
+      - name: Set environment variables
+        run: |
+          echo "export EMAIL=${{ secrets.EMAIL }}" >> $GITHUB_ENV
+          echo "export EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> $GITHUB_ENV
+          
       - name: Debug Environment Variables
         run: |
           env
