@@ -47,7 +47,7 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       
       - name: Run getSecrets
-        run: node --loader ts-node/esm yourfile.ts
+        run: node --loader ts-node/esm getSecrets.ts
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
