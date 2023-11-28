@@ -46,17 +46,10 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       
-
-
-      - name: Set environment variables
-        run: |
-          echo "export EMAIL=${{ secrets.EMAIL }}" >> $GITHUB_ENV
-          echo "export EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> $GITHUB_ENV
-          
-      - name: Debug Environment Variables
-        run: |
-          env
-          printenv
+      - name: Run getScripts
+        run: ts-node ./scripts/getScripts.ts
+    
+      
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
