@@ -47,7 +47,7 @@ jobs:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       
       - name: Run getScripts
-        run: ts-node ./scripts/getScripts.ts
+        run: ts-node ./scripts/getSecrets.ts
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
