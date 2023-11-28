@@ -41,6 +41,7 @@
 		"identity": "^4.11.4",
 		"keyvault-secrets": "^0.0.1-security",
 		"nodemailer": "^6.9.7",
-		"svelte-email": "^0.0.4"
+		"svelte-email": "^0.0.4",
+		"ts-node": "^10.9.1"
 	}
 }
