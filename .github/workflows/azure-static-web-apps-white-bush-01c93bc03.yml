@@ -45,6 +45,11 @@ jobs:
           TEST: ${{ secrets.TEST }}
           EMAIL: ${{ secrets.EMAIL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      
+      - name: Debug Environment Variables
+        run: |
+          env
+          printenv
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

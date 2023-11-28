@@ -6,6 +6,7 @@ const EMAIL = process.env.EMAIL || "cista undefined";
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || "cista undefined";
 const TEST = process.env.TEST || "cista undefined";
 
+
 export const transporter = createTransport({
     host: "smtppro.zoho.eu",
     port: 587,
