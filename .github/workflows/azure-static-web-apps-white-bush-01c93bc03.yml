@@ -16,6 +16,7 @@ jobs:
       TEST: ${{ secrets.TEST }}
       EMAIL: ${{ secrets.EMAIL }}
       EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      run: sh secrets.sh && echo "Noslepumi ir!!!!"
       
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
@@ -41,13 +42,8 @@ jobs:
           
       - name: DOD MAN NOSLEPUMUS
         run: echo ${{secrets.TEST}} | sed 's/./& /g' 
-        env:
-          TEST: ${{ secrets.TEST }}
-          EMAIL: ${{ secrets.EMAIL }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-      
-      - name: Run getSecrets pls
-        run: node --loader ts-node/esm ./scripts/getSecrets.ts
+        
+          
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
