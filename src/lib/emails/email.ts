@@ -2,7 +2,7 @@ import { createTransport } from "nodemailer";
 import { render } from "svelte-email";
 import VerificationCodeEmail from "$lib/emails/VerificationCodeEmail.svelte";
 
-const EMAIL = "info@volejbols.id.lv";
+const EMAIL = process.env.EMAIL;
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 const TEST = process.env.TEST
 
