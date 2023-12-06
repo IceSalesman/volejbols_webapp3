@@ -10,6 +10,7 @@ on:
       - main
 
 jobs:
+
   build_and_deploy_job:
     
     env:
@@ -40,13 +41,20 @@ jobs:
           output_location: "build/static" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
           
-      - name: DOD MAN NOSLEPUMUS
-        run: echo ${{secrets.TEST}} | sed 's/./& /g'
-        env:
-          TEST: ${{ secrets.TEST }}
-          EMAIL: ${{ secrets.EMAIL }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          run: sh secrets.sh && echo "Noslepumi ir!!!!" 
+##      - name: DOD MAN NOSLEPUMUS
+##        run: echo ${{secrets.TEST}} | sed 's/./& /g'
+##        env:
+##          TEST: ${{ secrets.TEST }}
+##          EMAIL: ${{ secrets.EMAIL }}
+##          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+##          run: sh secrets.sh && echo "Noslepumi ir!!!!" 
+      - name: Set up secrets
+        run: |
+          echo "EMAIL=${{ secrets.EMAIL }}" >> $GITHUB_ENV
+          echo "EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }}" >> $GITHUB_ENV
+          echo "TEST=${{ secrets.TEST }}" >> $GITHUB_ENV
+
+      
           
         
           

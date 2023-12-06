@@ -2,9 +2,9 @@ import { createTransport } from "nodemailer";
 import { render } from "svelte-email";
 import VerificationCodeEmail from "$lib/emails/VerificationCodeEmail.svelte";
 
-const EMAIL = process.env.EMAIL || "cista undefined";
-const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || "cista undefined";
-const TEST = process.env.TEST || "cista undefined";
+const EMAIL = "info@volejbols.id.lv";
+const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+const TEST = process.env.TEST
 
 export const transporter = createTransport({
     host: "smtppro.zoho.eu",
