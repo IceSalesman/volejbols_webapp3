@@ -6,3 +6,6 @@ export const otpSent = writable(false)
 
 export const email = writable("")
 
+export const EMAIL = writable(process.env.EMAIL)
+
+export const EMAIL_PASSWORD = writable(process.env.EMAIL_PASSWORD)
